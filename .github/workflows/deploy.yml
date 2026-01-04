@@ -27,6 +27,8 @@ jobs:
         run: npm install
         
       - name: Build
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: npm run build
         
       - name: Setup Pages
@@ -40,3 +42,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+```
+
+## **Step 3: Make Sure `.gitignore` Has This**
+
+Check your `.gitignore` file includes:
+```
+.env
+.env.local
+node_modules/
+dist/
