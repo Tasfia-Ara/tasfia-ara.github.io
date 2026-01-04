@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
-import { 
-  Github, 
-  Linkedin, 
-  ChevronRight, 
+import {
+  Github,
+  Linkedin,
+  ChevronRight,
   ArrowUpRight,
   Hash,
   GitBranch,
@@ -12,6 +12,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { PROJECTS, EXPERIENCES, SKILLS } from './constants';
+import profileImage from '/profile.jpg';
 
 const Navbar = ({ isExplored }: { isExplored: boolean }) => {
   const scrollTo = (id: string) => {
@@ -75,7 +76,7 @@ const Hero = ({ onExplore }: { onExplore: () => void }) => (
         <div className="profile-frame rounded-3xl rotate-2 group hover:rotate-0 transition-transform duration-700 shadow-2xl">
           <div className="w-full aspect-square bg-zinc-50 rounded-2xl overflow-hidden relative">
             <img
-              src="/profile.jpg"
+              src={profileImage}
               alt="Tasfia Ara Profile"
               className="w-full h-full object-cover grayscale brightness-105 group-hover:grayscale-0 transition-all duration-1000"
             />
